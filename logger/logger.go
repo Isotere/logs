@@ -17,12 +17,12 @@ type Logger struct {
 	logger *zap.SugaredLogger
 }
 
-func New(isDevel bool) (*Logger, error) {
+func New(logLevel string) (*Logger, error) {
 	logger := Logger{}
 
 	var encoderCfg zapcore.EncoderConfig
 
-	if isDevel {
+	if logLevel == LogLevelDevel {
 		encoderCfg = zap.NewDevelopmentEncoderConfig()
 	} else {
 		encoderCfg = zap.NewProductionEncoderConfig()

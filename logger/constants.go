@@ -1,5 +1,6 @@
 package logger
 
 const (
-	DefaultLogLevel = "devel"
+	LogLevelDevel = "devel"
+	LogLevelProd  = "prod"
 )
